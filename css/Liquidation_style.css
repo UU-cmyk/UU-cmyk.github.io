@@ -1,0 +1,38 @@
+p:not(.not-style,.text-black)  {
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.text-black {
+    text-shadow: 
+    -1px -1px 0 #c4c4c4,
+    1px -1px 0 #c4c4c4,
+    -1px 1px 0 #c4c4c4,
+    1px 1px 0 #c4c4c4;
+}
+
+div:not(.title) {
+    margin: 0 auto;
+}
+
+p {
+    margin: 0;
+    display: inline;
+}
+
+a {
+    width: 65%;
+}
+
+.blinking {
+    animation: blinkingText 0.95s infinite;
+}
+
+@keyframes blinkingText {
+    0% { opacity: 1;}
+    50% { opacity: 0;}
+    100% { opacity: 1;}
+}

@@ -1,0 +1,28 @@
+p:not(.not-style,.text-black)  {
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.text-black {
+    text-shadow: 
+    -1px -1px 0 #c4c4c4,
+    1px -1px 0 #c4c4c4,
+    -1px 1px 0 #c4c4c4,
+    1px 1px 0 #c4c4c4;
+}
+
+div:not(.title) {
+    margin: 0 auto;
+}
+
+p {
+    margin: 0;
+    display: inline;
+}
+
+a {
+    width: 65%;
+}

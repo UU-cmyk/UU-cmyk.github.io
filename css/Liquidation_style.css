@@ -18,7 +18,7 @@ div:not(.title) {
     margin: 0 auto;
 }
 
-p {
+p:not(.title-bg) {
     margin: 0;
     display: inline;
 }
@@ -26,6 +26,20 @@ p {
 a {
     width: 65%;
 }
+
+.title-bg {
+    background:#1C86EE;
+    margin: 15px auto;
+    border: 4px solid #1D1D1F;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0px 0px 6px #1D1D1F;
+    padding: 7px 13px;
+    Box-sizing: border-box;
+    text-align: center;
+}
+
 
 .blinking {
     animation: blinkingText 0.95s infinite;

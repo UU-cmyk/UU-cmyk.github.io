@@ -1,0 +1,51 @@
+p:not(.not-style,.text-black)  {
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.text-black {
+    text-shadow: 
+    -1px -1px 0 #c4c4c4,
+    1px -1px 0 #c4c4c4,
+    -1px 1px 0 #c4c4c4,
+    1px 1px 0 #c4c4c4;
+}
+
+div:not(.title) {
+    margin: 0 auto;
+}
+
+p {
+    display: inline;
+}
+
+a {
+    width: 65%;
+}
+
+.stroke,.stroke-HY,.stroke-TZ { /* 描边 */
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}  
+
+.stroke-HY {
+    color: #096ecf;
+}
+
+.stroke-TZ {
+    color: #f75e03;
+}
+
+.bullet-JS { /* 竞赛子弹 */
+    color: #fd1cad;
+}
+
+.bullet-PT { /* 普通子弹 */
+    color: #0be428;
+}

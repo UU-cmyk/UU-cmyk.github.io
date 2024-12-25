@@ -4,14 +4,54 @@
     <meta charset="UTF-8">
     <title>武器介绍</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="./Js/Mouse_JS.js"></script>
+    <script src="./JS/Device_Detection.js"></script>
     <style>
         a {
             width: 60%;
         }
 
         p {
-            text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
             display: inline;
+        }
+
+        p,a:not(.not-style) {
+            text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
+        }
+
+        .Level_1 {
+            width: 25%;
+            color: #afafaf;
+        }
+
+        .Level_2 {
+            width: 25%;
+            color: #52d12b;
+        }
+
+        .Level_3 {
+            width: 25%;
+            color: #6928d1;
+        }
+
+        .Level_4 {
+            width: 25%;
+            color: #f05be3;
+        }
+
+        .Level_5 {
+            width: 25%;
+            color: #fcf947;
+        }
+
+        .Level_6 {
+            width: 25%;
+            color: #d63232;
+        }
+
+        .Level_7 {
+            width: 25%;
+            color: #ffc711;
         }
     </style>
 </head>
@@ -23,8 +63,9 @@
     </div>
     <h1>武器介绍</h1>
     <hr color="black" width="100%" size="5">
+    <a style="width: 15%;" href="../Game_Description.html" class="not-style">返回</a>
     <a class="bg">
-        在本地图中枪械的属性分别为<br>
+        <p style="text-shadow: 1px 1px 0px #ececec, -1px -1px 0px #ececec, 1px -1px 0px #ececec, -1px 1px 0px #ececec;">在本地图中枪械的属性分别为</p><br>
         <p style="color: #afafaf;">破损<br></p>
         <p style="color: #52d12b;">修复<br></p>
         <p style="color: #6928d1;">完好<br></p>
@@ -41,6 +82,15 @@
         <p style="color: #ffc711;">金卓[黑鹰]（指四属性枪）<br></p>
         <p style="color: #ffc711;">金卓[铁爪]（指四属性枪）<br></p>
     </a>
-    <a style="width: 25%;" href="../Game_Description.html">返回</a>
+    <br>
+    <hr color="black" width="100%" size="3">
+    <br>
+    <a href="./Weapons/Level_1.html" class="Level_1">破损枪械介绍</a>
+    <a href="./Weapons/Level_2.html" class="Level_2">修复枪械介绍</a>
+    <a href="./Weapons/Level_3.html" class="Level_3">完好枪械介绍</a>
+    <a href="./Weapons/Level_4.html" class="Level_4">精致枪械介绍</a>
+    <a href="./Weapons/Level_5.html" class="Level_5">极品枪械介绍</a>
+    <a href="./Weapons/Level_6.html" class="Level_6">卓越枪械介绍</a>
+    <a href="./Weapons/Level_7.html" class="Level_7">金卓枪械介绍</a>
 </body>
 </html>

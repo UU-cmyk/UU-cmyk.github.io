@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./Js/Mouse_JS.js"></script>
+    <script src="./JS/Device_Detection.js"></script>
+    <title>随机抽奖</title>
+    <style>
+        .text-black {
+            text-shadow: 
+            -1px -1px 0 #c4c4c4,
+            1px -1px 0 #c4c4c4,
+            -1px 1px 0 #c4c4c4,
+            1px 1px 0 #c4c4c4;
+        }
+
+        div {
+            text-shadow: 
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black;
+        }
+
+        body {
+            font-family: Arial, sans-serif; /* 设置字体 */
+            text-align: center; /* 文字居中 */
+            margin-top: 50px; /* 上边距 */
+        }
+
+        #winner {
+            font-size: 24px; /* 设置获奖者文字大小 */
+            margin-top: 20px; /* 上边距 */
+            margin: 0 auto; /* 居中 */
+            color: #4CAF50;
+            padding: 10px 15px;
+        }
+
+        button {
+            border: 2px dashed #48a74b; /* 设置边框宽度、样式和颜色 */
+            margin: 25px;
+            background-color: #4CAF50; /* 背景颜色 */
+            color: white;              /* 字体颜色 */
+            border: none;              /* 去掉边框 */
+            padding: 15px 32px;       /* 内边距 */
+            text-align: center;        /* 文本居中 */
+            text-decoration: none;     /* 去掉下划线 */
+            display: inline-block;     /* 行内块元素 */
+            font-size: 16px;          /* 字体大小 */
+            transition: background-color 0.3s; /* 背景颜色过渡效果 */
+            cursor: pointer;          /* 鼠标手势 */
+            border-radius: 8px;       /* 圆角 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+        }
+
+        button:hover {
+            margin: 25px;
+            background-color: #45a049; /* 悬停时的背景颜色 */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
+        }
+
+        h2,p {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>模拟枪械抽取器（仅卓越）</h1>
+    <hr color="black" width="100%" size="5">
+    <a class="bg" style="width: 65%; margin: auto;">
+        <h2 class="text-black">模拟枪械抽取器（仅卓越）</h1><br>
+        <p class="text-black">点击按钮从奖池中随机抽取一个卓越枪械</p><br>
+        <!-- 按钮，点击后执行抽奖函数 -->
+        <button onclick="drawWinner()">抽取奖项</button><br>
+        <!-- 显示获奖项的区域 -->
+        <div id="winner"></div>
+    </a>
+
+    <script>
+    // 设定奖池
+    const prizePool = [
+        "MK14 [卓越]",
+        "MK14 [卓越] [黑鹰]",
+        "MK14 [卓越] [铁爪]",
+        "MG3 [卓越]",
+        "维克托 [卓越]",
+        "GROZA [卓越]",
+        "M82A1 [卓越]",
+        "P90 [卓越]",
+        "P90 [卓越] [黑鹰]",
+        "P90 [卓越] [铁爪]",
+        "Famas [卓越]",
+        "AMR [卓越]",
+        "AA12 [卓越]",
+        "MP5K [卓越]",
+        "SVD [卓越]",
+        "AUG [卓越]",
+        "M762 [卓越]",
+        "M762 [卓越] [黑鹰]",
+        "M762 [卓越] [铁爪]",
+        "MK14 [卓越]",
+        "MK14 [卓越] [黑鹰]",
+        "MK14 [卓越] [铁爪]",
+        "MG3 [卓越]",
+        "维克托 [卓越]",
+        "GROZA [卓越]",
+        "M82A1 [卓越]",
+        "P90 [卓越]",
+        "P90 [卓越] [黑鹰]",
+        "P90 [卓越] [铁爪]",
+        "Famas [卓越]",
+        "AMR [卓越]",
+        "AA12 [卓越]",
+        "MP5K [卓越]",
+        "SVD [卓越]",
+        "AUG [卓越]",
+        "M762 [卓越]",
+        "M762 [卓越] [黑鹰]",
+        "M762 [卓越] [铁爪]",
+        "MK14 [卓越]",
+        "MK14 [卓越] [黑鹰]",
+        "MK14 [卓越] [铁爪]",
+        "MG3 [卓越]",
+        "维克托 [卓越]",
+        "GROZA [卓越]",
+        "M82A1 [卓越]",
+        "P90 [卓越]",
+        "P90 [卓越] [黑鹰]",
+        "P90 [卓越] [铁爪]",
+        "Famas [卓越]",
+        "AMR [卓越]",
+        "AA12 [卓越]",
+        "MP5K [卓越]",
+        "SVD [卓越]",
+        "AUG [卓越]",
+        "M762 [卓越]",
+        "M762 [卓越] [黑鹰]",
+        "M762 [卓越] [铁爪]",
+        "MK14 [卓越]",
+        "MK14 [卓越] [黑鹰]",
+        "MK14 [卓越] [铁爪]",
+        "MG3 [卓越]",
+        "维克托 [卓越]",
+        "GROZA [卓越]",
+        "M82A1 [卓越]",
+        "P90 [卓越]",
+        "P90 [卓越] [黑鹰]",
+        "P90 [卓越] [铁爪]",
+        "Famas [卓越]",
+        "AMR [卓越]",
+        "AA12 [卓越]",
+        "MP5K [卓越]",
+        "SVD [卓越]",
+        "AUG [卓越]",
+        "M762 [卓越]",
+        "M762 [卓越] [黑鹰]",
+        "M762 [卓越] [铁爪]",
+        "MK14 [卓越]",
+        "MK14 [卓越] [黑鹰]",
+        "MK14 [卓越] [铁爪]",
+        "MG3 [卓越]",
+        "维克托 [卓越]",
+        "GROZA [卓越]",
+        "M82A1 [卓越]",
+        "P90 [卓越]",
+        "P90 [卓越] [黑鹰]",
+        "P90 [卓越] [铁爪]",
+        "Famas [卓越]",
+        "AMR [卓越]",
+        "AA12 [卓越]",
+        "MP5K [卓越]",
+        "SVD [卓越]",
+        "AUG [卓越]",
+        "M762 [卓越]",
+        "M762 [卓越] [黑鹰]",
+        "M762 [卓越] [铁爪]",
+        "MK14 [金卓]",
+        "MK14 [金卓] [黑鹰]",
+        "MK14 [金卓] [铁爪]",
+        "MG3 [金卓]",
+        "维克托 [金卓]",
+        "GROZA [金卓]",
+        "M82A1 [金卓]",
+        "P90 [金卓]",
+        "P90 [金卓] [黑鹰]",
+        "P90 [金卓] [铁爪]",
+        "Famas [金卓]",
+        "AMR [金卓]",
+        "AA12 [金卓]",
+        "MP5K [金卓]",
+        "SVD [金卓]",
+        "AUG [金卓]",
+        "M762 [金卓] [黑鹰]",
+        "M762 [金卓] [铁爪]"
+    ];
+
+    function drawWinner() {
+        // 随机生成一个索引，从奖池中抽取奖项
+        const randomIndex = Math.floor(Math.random() * prizePool.length);
+        // 根据随机索引获取获奖项
+        const winner = prizePool[randomIndex];
+
+        // 分割获奖项为名称和后缀
+        const parts = winner.split(' ');
+        const name = parts[0]; // 奖项名称
+        const suffix1 = parts[1] ? parts[1].replace(/[$$]/g, '') : ''; // 第一个后缀去掉方括号
+        const suffix2 = parts[2] ? parts[2].replace(/[$$]/g, '') : ''; // 第二个后缀去掉方括号
+
+        // 设置后缀颜色
+        let suffix1Color = 'white'; // 默认颜色
+        let suffix2Color = 'white'; // 默认颜色
+
+        // 判断后缀1的颜色
+        if (suffix1.includes('卓越')) {
+            suffix1Color = '#d63232'; // 如果是卓越，则设置为#d63232
+        } else if (suffix1.includes('金卓')) {
+            suffix1Color = '#ffc711'; // 如果是金卓，则设置为#ffc711
+        }
+
+        // 判断后缀2的颜色
+        if (suffix2.includes('黑鹰')) {
+            suffix2Color = '#096ecf'; // 如果是黑鹰，则设置为#096ecf
+        } else if (suffix2.includes('铁爪')) {
+            suffix2Color = '#f75e03'; // 如果是铁爪，则设置为#f75e03
+        }
+
+        // 在页面上显示获奖项
+        let output = `恭喜您抽中了:<br><span style="color: black;" class="text-black">${name}</span><span style="color: ${suffix1Color};">${suffix1}</span>`;
+        if (suffix2) {
+            output += `<span style="color: ${suffix2Color};">${suffix2}</span>`;
+        }
+        document.getElementById('winner').innerHTML = output;
+    }
+    </script>
+    <a href="./index.html" style="width: 30%;">返回首页</a>
+</body>
+</html>

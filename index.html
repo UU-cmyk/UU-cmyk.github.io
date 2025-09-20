@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人首页</title>
+  <link rel="stylesheet" href="./Css/style.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="glass-card" style="margin-top: 50px;">
+    <div class="avatar-container">
+      <img id="avatar" src="" alt="头像" class="avatar">
+    </div>
+    <h1 id="name" class="PH-h1">加载中...</h1>
+    <p id="bio"></p>
+    <div class="stats">
+      <div class="stat">
+        <span id="repos">0</span>
+        <span>公开<br>仓库</span>
+      </div>
+      <div class="stat">
+        <span id="followers">0</span>
+        <span>粉丝</span>
+      </div>
+      <div class="stat">
+        <span id="following">0</span>
+        <span>关注</span>
+      </div>
+    </div>
+    <a id="profile-link" href="#" target="_blank" class="profile-btn">查看GitHub</a>
+  </div>
+  <br>
+  <div class="glass-card" style="margin-top: 30px; margin-bottom: 20px; background: rgba(193, 8, 225, 0.2);">
+    <h1>K_Lan真帅</h1>
+    <p>一个业余编程小白，技术力不咋地</p>
+  </div>
+  <hr>
+<div class="glass-card skills-card" style="margin-top: 40px;">
+  <h2>技术栈 <span class="icon">💻</span></h2>
+  <div class="skill-bubbles">
+    <div class="bubble" style="--color: #318dd8">Python</div>      <!-- Python官方深蓝色 -->
+    <div class="bubble" style="--color: #9b4f96">Cpp</div>         <!-- C++社区常用紫色 -->
+    <div class="bubble" style="--color: #264de4">CSS3</div>        <!-- 保持CSS3标准深蓝 -->
+    <div class="bubble" style="--color: #e34c26">HTML</div>        <!-- HTML5官方橙色 -->
+    <div class="bubble" style="--color: #f7df1e">JS</div>          <!-- JavaScript标准黄 -->
+  </div>
+</div>
+<div class="glass-card projects-card" style="margin-top: 30px;">
+  <h2>近期作品 <span class="icon">🚀</span></h2>
+  <!-- 例示（防脑雾）
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="project-header">
+        <h3>{name}</h3>
+        <div class="tech-tags">
+          <span>{text}</span>
+          <span>{text}</span>
+        </div>
+      </div>
+      <p class="project-desc">{text}</p> 
+    </div> 
+  -->
+  <h3>暂无</h3>
+</div>
+<div class="glass-card contact-card" style="margin-top: 30px;">
+  <h2>联系 <span class="icon">📮</span></h2>
+  <div class="contact-links">
+    <a href="mailto:3579646724@qq.com" class="contact-btn">
+      <span class="icon">✉️</span> 电子邮件
+    </a>
+    <a target="_blank" class="contact-btn">
+      <span class="icon">🐧3579646724</span> QQ
+    </a>
+  </div>
+</div>
+  <script src="./Script/GIR.js"></script>
+</body>
+</html>
